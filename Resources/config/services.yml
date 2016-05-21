@@ -1,0 +1,18 @@
+parameters:
+    sb_queue.class: SymfonyBundles\QueueBundle\Service\Queue
+    sb_queue.storage.redis.class: SymfonyBundles\QueueBundle\Service\Storage\RedisStorage
+
+services:
+    # Services
+    sb_queue:
+        class: "%sb_queue.class%"
+        calls:
+            - [setName, ["%sb_queue.default_name%"]]
+            - [setStorage, ["@sb_queue.storage"]]
+
+    # Storages
+    sb_queue.storage: "@sb_queue.storage.redis"
+
+    sb_queue.storage.redis:
+        class: "%sb_queue.storage.redis.class%"
+        arguments: ["%sb_queue.storage.redis.parameters%", "%sb_queue.storage.redis.options%"]

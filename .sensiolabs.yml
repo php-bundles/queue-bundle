@@ -1,0 +1,10 @@
+ignore_branches:
+    - gh-pages
+
+php_ini:
+    extension=redis.so
+
+global_exclude_dirs:
+    - logs
+    - vendor
+    - Tests
