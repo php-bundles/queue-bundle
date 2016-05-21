@@ -28,6 +28,7 @@
             <exclude>
                 <directory>./Resources</directory>
                 <directory>./Tests</directory>
+                <directory>./logs</directory>
                 <directory>./vendor</directory>
             </exclude>
         </whitelist>
