@@ -5,15 +5,15 @@ namespace SymfonyBundles\QueueBundle\DependencyInjection;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+use Symfony\Component\HttpKernel\DependencyInjection\ConfigurableExtension;
 
-class QueueExtension extends Extension
+class QueueExtension extends ConfigurableExtension
 {
 
     /**
      * {@inheritdoc}
      */
-    public function load(array $configs, ContainerBuilder $container)
+    protected function loadInternal(array $mergedConfig, ContainerBuilder $container)
     {
         $loader = new Loader\YamlFileLoader(
             $container, new FileLocator(__DIR__ . '/../Resources/config')
@@ -21,13 +21,11 @@ class QueueExtension extends Extension
 
         $loader->load('services.yml');
 
-        $config = $this->processConfiguration(new Configuration(), $configs);
+        $container->setAlias($mergedConfig['service_name'], 'sb_queue');
+        $container->setParameter('sb_queue.default_name', $mergedConfig['default_name']);
 
-        $container->setAlias($config['service_name'], 'sb_queue');
-        $container->setParameter('sb_queue.default_name', $config['default_name']);
-
-        $container->setParameter('sb_queue.storage.redis.parameters', $config['server']['redis']['parameters']);
-        $container->setParameter('sb_queue.storage.redis.options', $config['server']['redis']['options']);
+        $container->setParameter('sb_queue.storage.redis.parameters', $mergedConfig['server']['redis']['parameters']);
+        $container->setParameter('sb_queue.storage.redis.options', $mergedConfig['server']['redis']['options']);
     }
 
     /**
