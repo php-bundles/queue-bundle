@@ -83,8 +83,8 @@ sb_queue:
 [testing-image]: https://travis-ci.org/symfony-bundles/queue-bundle.svg?branch=master
 [stable-image]: https://poser.pugx.org/symfony-bundles/queue-bundle/v/stable
 [downloads-image]: https://poser.pugx.org/symfony-bundles/queue-bundle/downloads
-[sensiolabs-insight-link]: https://insight.sensiolabs.com/projects/014a571a-b784-42b2-b83c-3f4ff8b56c0a
-[sensiolabs-insight-image]: https://insight.sensiolabs.com/projects/014a571a-b784-42b2-b83c-3f4ff8b56c0a/big.png
+[sensiolabs-insight-link]: https://insight.sensiolabs.com/projects/e288c87f-ddf0-4a1c-81c5-5a7f86ab3351
+[sensiolabs-insight-image]: https://insight.sensiolabs.com/projects/e288c87f-ddf0-4a1c-81c5-5a7f86ab3351/big.png
 [code-coverage-link]: https://scrutinizer-ci.com/g/symfony-bundles/queue-bundle/?branch=master
 [code-coverage-image]: https://scrutinizer-ci.com/g/symfony-bundles/queue-bundle/badges/coverage.png?b=master
 [scrutinizer-code-quality-link]: https://scrutinizer-ci.com/g/symfony-bundles/queue-bundle/?branch=master
