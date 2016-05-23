@@ -3,14 +3,19 @@
 namespace SymfonyBundles\QueueBundle\Tests\Fixtures\app;
 
 use Symfony\Component\HttpKernel\Kernel;
+use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Config\Loader\LoaderInterface;
 
 class AppKernel extends Kernel
 {
 
-    /**
-     * {@inheritdoc}
-     */
+    public function __construct($environment, $debug)
+    {
+        parent::__construct($environment, $debug);
+
+        (new Filesystem())->remove($this->getCacheDir());
+    }
+
     public function registerBundles()
     {
         $bundles = [
@@ -21,33 +26,21 @@ class AppKernel extends Kernel
         return $bundles;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRootDir()
     {
         return __DIR__;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getCacheDir()
     {
-        return '/tmp';
+        return '/tmp/symfony-cache';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getLogDir()
     {
-        return '/tmp';
+        return '/tmp/symfony-cache';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
         $loader->load($this->getRootDir() . '/config/config_test.yml');
