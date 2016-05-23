@@ -1,8 +1,9 @@
 {
     "name": "symfony-bundles/queue-bundle",
     "type": "symfony-bundle",
-    "description": "Symfony: Queue Bundle",
+    "description": "Symfony Queue Bundle",
     "keywords": ["queue", "redis", "symfony", "bundle"],
+    "homepage": "https://github.com/symfony-bundles/queue-bundle",
     "license": "MIT",
     "authors": [
         {
