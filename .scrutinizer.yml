@@ -1,5 +1,6 @@
 filter:
     excluded_paths:
+        - logs/*
         - vendor/*
         - Tests/*
 
