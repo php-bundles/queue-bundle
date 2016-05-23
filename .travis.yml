@@ -41,3 +41,6 @@ matrix:
     allow_failures:
         - php: hhvm
         - php: nightly
+
+notifications:
+    email: false
