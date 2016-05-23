@@ -89,4 +89,3 @@ sb_queue:
 [code-coverage-image]: https://scrutinizer-ci.com/g/symfony-bundles/queue-bundle/badges/coverage.png?b=master
 [scrutinizer-code-quality-link]: https://scrutinizer-ci.com/g/symfony-bundles/queue-bundle/?branch=master
 [scrutinizer-code-quality-image]: https://scrutinizer-ci.com/g/symfony-bundles/queue-bundle/badges/quality-score.png?b=master
-[redis-bundle-link]: https://github.com/snc/SncRedisBundle/blob/master/Resources/doc/index.md#usage
