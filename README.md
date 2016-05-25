@@ -10,35 +10,6 @@ Symfony Queue Bundle
 [![Latest Stable Version][stable-image]][package-link]
 [![License][license-image]][license-link]
 
-How to use queue
-----------------
-A simple example of the use of the queue:
-``` php
-$queue = $this->get('sb_queue'); // get the service
-// or use: $this->get('queue'); the `queue` service use as alias,
-// which setting in config.yml in parameter service_name
-
-// adding some data to queue
-$queue->push('User "demo" registered');
-$queue->push(1234567890);
-$queue->push(new \stdClass);
-
-// get count of items from queue
-$queue->count(); // returns integer: 3
-```
-
-``` php
-// now, we can get the data at any time in the queue order
-
-// get data from queue
-$queue->pop(); // returns string: User "demo" registered
-$queue->count(); // returns integer: 2
-$queue->pop(); // returns integer: 1234567890
-$queue->count(); // returns integer: 1
-$queue->pop(); // returns object: object(stdClass)
-$queue->count(); // returns integer: 0
-```
-
 Installation
 ------------
 * Require the bundle with composer:
@@ -74,6 +45,35 @@ sb_queue:
                 - "tcp://localhost?alias=queue"
             options:
                 prefix: "sb_queue:"
+```
+
+How to use
+----------
+A simple example of the use of the queue:
+``` php
+$queue = $this->get('sb_queue'); // get the service
+// or use: $this->get('queue'); the `queue` service use as alias,
+// which setting in config.yml in parameter service_name
+
+// adding some data to queue
+$queue->push('User "demo" registered');
+$queue->push(1234567890);
+$queue->push(new \stdClass);
+
+// get count of items from queue
+$queue->count(); // returns integer: 3
+```
+
+``` php
+// now, we can get the data at any time in the queue order
+
+// get data from queue
+$queue->pop(); // returns string: User "demo" registered
+$queue->count(); // returns integer: 2
+$queue->pop(); // returns integer: 1234567890
+$queue->count(); // returns integer: 1
+$queue->pop(); // returns object: object(stdClass)
+$queue->count(); // returns integer: 0
 ```
 
 [package-link]: https://packagist.org/packages/symfony-bundles/queue-bundle

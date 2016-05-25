@@ -16,12 +16,6 @@
         </testsuite>
     </testsuites>
 
-    <logging>
-        <log type="coverage-clover" target="./logs/coverage/clover.xml"/>
-        <log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/>
-        <log type="coverage-html" target="./logs/coverage" yui="true" highlight="true"/>
-    </logging>
-
     <filter>
         <whitelist>
             <directory>./</directory>
