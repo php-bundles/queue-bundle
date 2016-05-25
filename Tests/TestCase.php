@@ -12,20 +12,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->container = $this->bootKernel()->getContainer();
-    }
-
-    protected function bootKernel()
-    {
-        $kernel = $this->createKernel();
-        $kernel->boot();
-
-        return $kernel;
-    }
-
-    protected function createKernel()
-    {
-        return new Fixtures\app\AppKernel('test', true);
+        $this->container = Kernel::make()->getContainer();
     }
 
 }
