@@ -2,7 +2,7 @@
     "name": "symfony-bundles/queue-bundle",
     "type": "symfony-bundle",
     "description": "Symfony Queue Bundle",
-    "keywords": ["queue", "redis", "symfony", "bundle"],
+    "keywords": ["queue", "redis", "symfony", "bundle", "fifo"],
     "homepage": "https://github.com/symfony-bundles/queue-bundle",
     "license": "MIT",
     "authors": [
