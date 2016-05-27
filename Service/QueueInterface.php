@@ -24,6 +24,13 @@ interface QueueInterface
     public function setName($name);
 
     /**
+     * Gets the name of the queue list.
+     *
+     * @return string
+     */
+    public function getName();
+
+    /**
      * Removes and returns the first element of the list.
      *
      * @return mixed

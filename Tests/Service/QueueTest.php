@@ -25,6 +25,20 @@ class QueueTest extends TestCase
         }
     }
 
+    public function testName()
+    {
+        $oldName = $this->queue->getName();
+        $newName = 'foobaz';
+
+        $this->queue->setName($newName);
+
+        $this->assertSame($newName, $this->queue->getName());
+
+        $this->queue->setName($oldName);
+
+        $this->assertSame($oldName, $this->queue->getName());
+    }
+
     public function testPop()
     {
         $this->assertSame(false, $this->queue->pop());
