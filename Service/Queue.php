@@ -26,6 +26,14 @@ class Queue implements QueueInterface
     /**
      * {@inheritdoc}
      */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function setStorage(Storage\StorageInterface $storage)
     {
         $this->storage = $storage;
