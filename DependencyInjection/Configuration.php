@@ -58,7 +58,7 @@ class Configuration implements ConfigurationInterface
             ->fixXmlConfig('parameter')
             ->addDefaultsIfNotSet()->children()
                 ->arrayNode('parameters')
-                    ->defaultValue(['tcp://localhost?alias=queue'])
+                    ->defaultValue(['tcp://127.0.0.1?alias=queue'])
                     ->prototype('scalar')->end()
                 ->end()
                 ->arrayNode('options')

@@ -42,7 +42,7 @@ sb_queue:
     server:
         redis:
             parameters:
-                - "tcp://localhost?alias=queue"
+                - "tcp://127.0.0.1?alias=queue"
             options:
                 prefix: "sb_queue:"
 ```
