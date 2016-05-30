@@ -2,7 +2,6 @@
 
 namespace SymfonyBundles\QueueBundle\Tests\Service\Storage;
 
-use Predis\ClientInterface;
 use SymfonyBundles\QueueBundle\Tests\TestCase;
 
 class RedisStorageTest extends TestCase
