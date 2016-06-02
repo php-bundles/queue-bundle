@@ -15,4 +15,4 @@ services:
 
     sb_queue.storage.redis:
         class: "%sb_queue.storage.redis.class%"
-        arguments: ["%sb_queue.storage.redis.parameters%", "%sb_queue.storage.redis.options%"]
+        arguments: ["@sb_redis.client.default"]

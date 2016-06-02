@@ -2,21 +2,22 @@
 
 namespace SymfonyBundles\QueueBundle\Service\Storage;
 
+use SymfonyBundles\RedisBundle\Service\ClientInterface;
+
 class RedisStorage implements StorageInterface
 {
 
     /**
-     * @var \Predis\ClientInterface
+     * @var ClientInterface
      */
     private $client;
 
     /**
-     * @param array $parameters Connection parameters for one or more servers.
-     * @param array $options    Options to configure some behaviours of the client.
+     * @param ClientInterface $client
      */
-    public function __construct(array $parameters = [], array $options = [])
+    public function __construct(ClientInterface $client)
     {
-        $this->client = new \Predis\Client($parameters, $options);
+        $this->client = $client;
     }
 
     /**
