@@ -23,9 +23,6 @@ class QueueExtension extends ConfigurableExtension
 
         $container->setAlias($mergedConfig['service_name'], 'sb_queue');
         $container->setParameter('sb_queue.default_name', $mergedConfig['default_name']);
-
-        $container->setParameter('sb_queue.storage.redis.parameters', $mergedConfig['server']['redis']['parameters']);
-        $container->setParameter('sb_queue.storage.redis.options', $mergedConfig['server']['redis']['options']);
     }
 
     /**
