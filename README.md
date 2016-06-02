@@ -41,7 +41,7 @@ sb_queue:
     default_name: "queue:default"
 ```
 
-* Configure the redis client in your config.yml. Read more [RedisBundle Installation][redis-bundle-link].
+* Configure the redis client in your config.yml. Read more about [RedisBundle configuration][redis-bundle-link].
 
 How to use
 ----------
