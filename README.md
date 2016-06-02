@@ -41,7 +41,7 @@ sb_queue:
     default_name: "queue:default"
 ```
 
-* Configure the redis-client in your config.yml (See [here][redis-configuration-link]).
+* Configure the redis client in your config.yml. Read more [RedisBundle Installation][redis-bundle-link].
 
 How to use
 ----------
@@ -85,4 +85,4 @@ $queue->count(); // returns integer: 0
 [code-coverage-image]: https://scrutinizer-ci.com/g/symfony-bundles/queue-bundle/badges/coverage.png?b=master
 [scrutinizer-code-quality-link]: https://scrutinizer-ci.com/g/symfony-bundles/queue-bundle/?branch=master
 [scrutinizer-code-quality-image]: https://scrutinizer-ci.com/g/symfony-bundles/queue-bundle/badges/quality-score.png?b=master
-[redis-configuration-link]: https://github.com/symfony-bundles/redis-bundle#installation
+[redis-bundle-link]: https://github.com/symfony-bundles/redis-bundle#installation
