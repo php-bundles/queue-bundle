@@ -13,7 +13,7 @@ class QueueExtension extends ConfigurableExtension
     /**
      * {@inheritdoc}
      */
-    protected function loadInternal(array $mergedConfig, ContainerBuilder $container)
+    protected function loadInternal(array $configs, ContainerBuilder $container)
     {
         $loader = new Loader\YamlFileLoader(
             $container, new FileLocator(__DIR__ . '/../Resources/config')
@@ -21,8 +21,8 @@ class QueueExtension extends ConfigurableExtension
 
         $loader->load('services.yml');
 
-        $container->setAlias($mergedConfig['service_name'], 'sb_queue');
-        $container->setParameter('sb_queue.default_name', $mergedConfig['default_name']);
+        $container->setAlias($configs['service_name'], 'sb_queue');
+        $container->setParameter('sb_queue.default_name', $configs['default_name']);
     }
 
     /**
