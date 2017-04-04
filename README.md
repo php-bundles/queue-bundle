@@ -1,5 +1,5 @@
-Symfony Queue Bundle
-====================
+SymfonyBundlesQueueBundle
+=========================
 
 [![SensioLabsInsight][sensiolabs-insight-image]][sensiolabs-insight-link]
 
