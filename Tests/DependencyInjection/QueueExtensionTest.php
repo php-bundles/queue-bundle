@@ -9,7 +9,6 @@ use SymfonyBundles\QueueBundle\DependencyInjection\QueueExtension;
 
 class QueueExtensionTest extends TestCase
 {
-
     public function testHasServices()
     {
         $extension = new QueueExtension();
@@ -32,5 +31,4 @@ class QueueExtensionTest extends TestCase
 
         $this->assertStringEndsWith('queue', $extension->getAlias());
     }
-
 }

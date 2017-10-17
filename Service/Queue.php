@@ -4,7 +4,6 @@ namespace SymfonyBundles\QueueBundle\Service;
 
 class Queue implements QueueInterface
 {
-
     /**
      * @var string
      */
@@ -62,5 +61,4 @@ class Queue implements QueueInterface
     {
         return $this->storage->count($this->name);
     }
-
 }

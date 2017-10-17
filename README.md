@@ -37,8 +37,16 @@ public function registerBundles()
 Defaults configuration:
 ``` yml
 sb_queue:
-    service_name: "queue"
-    default_name: "queue:default"
+    service:
+        alias: 'queue' # alias for service `sb_queue` (e.g. $this->get('queue'))
+        class: 'SymfonyBundles\QueueBundle\Service\Queue'
+        storage: 'redis' # storage key from `queue.storages` section
+    settings:
+        queue_default_name: 'queue:default' # default name for queue
+    storages:
+        redis:
+            class: 'SymfonyBundles\QueueBundle\Service\Storage\RedisStorage'
+            client: 'sb_redis.client.default' # storage client service id
 ```
 
 * Configure the redis client in your config.yml. Read more about [RedisBundle configuration][redis-bundle-link].
@@ -58,6 +66,21 @@ $queue->push(new \stdClass);
 
 // get count of items from queue
 $queue->count(); // returns integer: 3
+```
+
+If you want to change the queue:
+```
+// adding data to queue `notifications`
+$queue->setName('application:notifications');
+$queue->push('You have a new message from Jessica');
+
+// adding data to queue `settings`
+$queue->setName('account:settings');
+$queue->push('User with ID 123 changed password');
+
+// adding data to default queue
+$queue->setName('queue:default');
+$queue->push('To be or not to be');
 ```
 
 ``` php

@@ -6,7 +6,6 @@ use SymfonyBundles\QueueBundle\Tests\TestCase;
 
 class QueueTest extends TestCase
 {
-
     /**
      * @var \SymfonyBundles\QueueBundle\Service\QueueInterface
      */
@@ -71,5 +70,4 @@ class QueueTest extends TestCase
 
         $this->assertSame(0, $this->queue->count());
     }
-
 }

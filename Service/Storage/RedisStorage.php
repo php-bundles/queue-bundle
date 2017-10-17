@@ -6,7 +6,6 @@ use SymfonyBundles\RedisBundle\Service\ClientInterface;
 
 class RedisStorage implements StorageInterface
 {
-
     /**
      * @var ClientInterface
      */
@@ -59,5 +58,4 @@ class RedisStorage implements StorageInterface
     {
         return $this->client->llen($key);
     }
-
 }

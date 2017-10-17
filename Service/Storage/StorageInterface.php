@@ -4,7 +4,6 @@ namespace SymfonyBundles\QueueBundle\Service\Storage;
 
 interface StorageInterface
 {
-
     /**
      * Removes and returns the first element of the list.
      *
@@ -28,8 +27,6 @@ interface StorageInterface
      *
      * @param string $key   The key name of list.
      * @param mixed  $value Pushes value of the list.
-     *
-     * @return void
      */
     public function append($key, $value);
 
@@ -38,8 +35,6 @@ interface StorageInterface
      *
      * @param string $key   The key name of list.
      * @param mixed  $value Pushes value of the list.
-     *
-     * @return void
      */
     public function prepend($key, $value);
 
