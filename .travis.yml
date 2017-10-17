@@ -16,12 +16,12 @@ env:
     - SYMFONY_VERSION=3.2.*
     - SYMFONY_VERSION=3.3.*
 
+services:
+    - redis-server
+
 cache:
     directories:
         - $HOME/.composer/cache
-
-services:
-    - redis-server
 
 before_install:
     - if [ "$TRAVIS_PHP_VERSION" != "hhvm" ] &&  [ "$TRAVIS_PHP_VERSION" < "7.1" ]; then phpenv config-rm xdebug.ini; fi
