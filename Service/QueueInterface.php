@@ -4,13 +4,10 @@ namespace SymfonyBundles\QueueBundle\Service;
 
 interface QueueInterface
 {
-
     /**
      * Sets the storage client.
      *
      * @param Storage\StorageInterface $storage
-     *
-     * @return void
      */
     public function setStorage(Storage\StorageInterface $storage);
 
@@ -18,8 +15,6 @@ interface QueueInterface
      * Sets the name of the queue list.
      *
      * @param string $name
-     *
-     * @return void
      */
     public function setName($name);
 
@@ -41,8 +36,6 @@ interface QueueInterface
      * Append the value into the end of list.
      *
      * @param mixed $value Pushes value of the list.
-     *
-     * @return void
      */
     public function push($value);
 

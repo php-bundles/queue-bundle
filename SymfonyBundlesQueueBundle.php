@@ -8,7 +8,6 @@ use SymfonyBundles\BundleDependency\BundleDependencyInterface;
 
 class SymfonyBundlesQueueBundle extends Bundle implements BundleDependencyInterface
 {
-
     use BundleDependency;
 
     /**
@@ -25,8 +24,7 @@ class SymfonyBundlesQueueBundle extends Bundle implements BundleDependencyInterf
     public function getBundleDependencies()
     {
         return [
-            \SymfonyBundles\RedisBundle\SymfonyBundlesRedisBundle::class
+            \SymfonyBundles\RedisBundle\SymfonyBundlesRedisBundle::class,
         ];
     }
-
 }

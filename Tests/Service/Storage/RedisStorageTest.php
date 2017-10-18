@@ -6,7 +6,6 @@ use SymfonyBundles\QueueBundle\Tests\TestCase;
 
 class RedisStorageTest extends TestCase
 {
-
     /**
      * @var \SymfonyBundles\QueueBundle\Service\Storage\StorageInterface
      */
@@ -66,5 +65,4 @@ class RedisStorageTest extends TestCase
         $this->storage->append('unit-test', 'world');
         $this->storage->prepend('unit-test', 'hello');
     }
-
 }

@@ -9,7 +9,6 @@ use SymfonyBundles\QueueBundle\DependencyInjection\QueueExtension;
 
 class QueueExtensionTest extends TestCase
 {
-
     public function testHasServices()
     {
         $extension = new QueueExtension();
@@ -26,11 +25,25 @@ class QueueExtensionTest extends TestCase
         }
     }
 
+    public function testInvalidStorageSection()
+    {
+        $extension = new QueueExtension();
+        $container = new ContainerBuilder();
+
+        $this->expectException(\InvalidArgumentException::class);
+
+        $extension->load(['sb_queue' => [
+            'service' => [
+                'storage' => 'mongo',
+                ],
+            ],
+        ], $container);
+    }
+
     public function testAlias()
     {
         $extension = new QueueExtension();
 
         $this->assertStringEndsWith('queue', $extension->getAlias());
     }
-
 }
