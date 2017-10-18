@@ -68,6 +68,18 @@ $queue->push(new \stdClass);
 $queue->count(); // returns integer: 3
 ```
 
+``` php
+// now, we can get the data at any time in the queue order
+
+// get data from queue
+$queue->pop(); // returns string: User "demo" registered
+$queue->count(); // returns integer: 2
+$queue->pop(); // returns integer: 1234567890
+$queue->count(); // returns integer: 1
+$queue->pop(); // returns object: object(stdClass)
+$queue->count(); // returns integer: 0
+```
+
 If you want to change the queue:
 ```
 // adding data to queue `notifications`
@@ -81,18 +93,6 @@ $queue->push('User with ID 123 changed password');
 // adding data to default queue
 $queue->setName('queue:default');
 $queue->push('To be or not to be');
-```
-
-``` php
-// now, we can get the data at any time in the queue order
-
-// get data from queue
-$queue->pop(); // returns string: User "demo" registered
-$queue->count(); // returns integer: 2
-$queue->pop(); // returns integer: 1234567890
-$queue->count(); // returns integer: 1
-$queue->pop(); // returns object: object(stdClass)
-$queue->count(); // returns integer: 0
 ```
 
 [package-link]: https://packagist.org/packages/symfony-bundles/queue-bundle
