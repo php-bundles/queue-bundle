@@ -57,7 +57,7 @@ A simple example of the use of the queue:
 ``` php
 $queue = $this->get('sb_queue'); // get the service
 // or use: $this->get('queue'); the `queue` service use as alias,
-// which setting in config.yml in parameter service_name
+// which setting in config.yml in parameter `sb_queue.service.alias`
 
 // adding some data to queue
 $queue->push('User "demo" registered');
